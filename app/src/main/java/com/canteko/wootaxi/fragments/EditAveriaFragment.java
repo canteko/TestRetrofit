@@ -1,10 +1,14 @@
-package com.canteko.mecaround.fragments;
+package com.canteko.wootaxi.fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,18 +16,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.interfaces.OnNuevaAveriaListener;
-import com.canteko.mecaround.models.AveriaDB;
-
-import io.realm.Realm;
-import io.realm.RealmResults;
+import com.canteko.wootaxi.R;
+import com.canteko.wootaxi.interfaces.OnNuevaAveriaListener;
+import com.canteko.wootaxi.models.AveriaDB;
 
 /**
  * A simple {@link Fragment} subclass.

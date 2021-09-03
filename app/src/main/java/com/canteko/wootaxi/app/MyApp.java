@@ -1,9 +1,9 @@
-package com.canteko.mecaround.app;
+package com.canteko.wootaxi.app;
 
 import android.app.Application;
 
-import com.canteko.mecaround.models.AveriaDB;
-import com.canteko.mecaround.models.TallerDB;
+import com.canteko.wootaxi.models.AveriaDB;
+import com.canteko.wootaxi.models.TallerDB;
 
 import java.util.concurrent.atomic.AtomicLong;
 

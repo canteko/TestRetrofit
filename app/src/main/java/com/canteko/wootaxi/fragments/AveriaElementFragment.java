@@ -1,27 +1,21 @@
-package com.canteko.mecaround.fragments;
+package com.canteko.wootaxi.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import com.canteko.wootaxi.R;
+import com.canteko.wootaxi.adapters.MyAveriaRecyclerViewAdapter;
+import com.canteko.wootaxi.interfaces.OnAveriaInteractionListener;
+import com.canteko.wootaxi.models.AveriaDB;
 
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.adapters.MyAveriaRecyclerViewAdapter;
-import com.canteko.mecaround.interfaces.OnAveriaInteractionListener;
-import com.canteko.mecaround.models.AveriaDB;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.realm.OrderedRealmCollection;
 import io.realm.Realm;
 import io.realm.RealmResults;
 

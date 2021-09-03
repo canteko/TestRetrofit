@@ -1,7 +1,4 @@
-package com.canteko.mecaround.activities;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
+package com.canteko.wootaxi.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,15 +7,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.databinding.ActivityMainBinding;
-import com.canteko.mecaround.fragments.EditAveriaFragment;
-import com.canteko.mecaround.fragments.NuevaAveriaDialogo;
-import com.canteko.mecaround.interfaces.OnAveriaInteractionListener;
-import com.canteko.mecaround.interfaces.OnNuevaAveriaListener;
-import com.canteko.mecaround.models.AveriaDB;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+
+import com.canteko.wootaxi.commons.Parameters;
+import com.canteko.wootaxi.databinding.ActivityMainBinding;
+import com.canteko.wootaxi.fragments.EditAveriaFragment;
+import com.canteko.wootaxi.fragments.NuevaAveriaDialogo;
+import com.canteko.wootaxi.interfaces.ApiWootaxiInterface;
+import com.canteko.wootaxi.interfaces.OnAveriaInteractionListener;
+import com.canteko.wootaxi.interfaces.OnNuevaAveriaListener;
+import com.canteko.wootaxi.models.AveriaDB;
+import com.canteko.wootaxi.requests.LoginRequest;
+import com.canteko.wootaxi.requests.VerifyApiKeyRequest;
+import com.canteko.wootaxi.responses.LoginResponse;
+import com.canteko.wootaxi.responses.data.LoginData;
+
+import java.net.HttpURLConnection;
 
 import io.realm.Realm;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements OnAveriaInteractionListener, OnNuevaAveriaListener {
 
@@ -124,5 +136,49 @@ public class MainActivity extends AppCompatActivity implements OnAveriaInteracti
         // Create the AlertDialog object and return it
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkIfValidCredentials();
+    }
+
+    private void checkIfValidCredentials() {
+        String apiKey = Parameters.getApiKey(this);
+        String email = Parameters.getEmail(this);
+
+        if (apiKey.isEmpty() || email.isEmpty()) {
+            goToLoginActivity();
+        }
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Parameters.getApiBaseUrl(this))
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiWootaxiInterface apiService = retrofit.create(ApiWootaxiInterface.class);
+        Call<LoginResponse> verifyApiKeyCall = apiService.verifyApiKey(new VerifyApiKeyRequest(apiKey, email));
+        verifyApiKeyCall.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                LoginResponse loginResponse = response.body();
+
+                if(response.code() != HttpURLConnection.HTTP_OK || loginResponse == null || !loginResponse.isStatus()) {
+                    goToLoginActivity();
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                goToLoginActivity();
+            }
+        });
+    }
+
+    public void goToLoginActivity() {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 }

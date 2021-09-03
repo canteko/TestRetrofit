@@ -1,4 +1,4 @@
-package com.canteko.mecaround.fragments;
+package com.canteko.wootaxi.fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.interfaces.OnNuevaAveriaListener;
+import com.canteko.wootaxi.R;
+import com.canteko.wootaxi.interfaces.OnNuevaAveriaListener;
 
 public class NuevaAveriaDialogo extends DialogFragment {
 

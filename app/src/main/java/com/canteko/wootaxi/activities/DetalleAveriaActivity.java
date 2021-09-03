@@ -1,20 +1,18 @@
-package com.canteko.mecaround.activities;
+package com.canteko.wootaxi.activities;
 
 import android.os.Bundle;
-
-import com.canteko.mecaround.models.AveriaDB;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.widget.TextView;
-
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.databinding.ActivityDetalleAveriaBinding;
+import com.canteko.wootaxi.R;
+import com.canteko.wootaxi.databinding.ActivityDetalleAveriaBinding;
+import com.canteko.wootaxi.models.AveriaDB;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import io.realm.Realm;
 

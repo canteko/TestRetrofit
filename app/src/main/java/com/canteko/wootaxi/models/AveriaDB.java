@@ -1,4 +1,4 @@
-package com.canteko.mecaround.models;
+package com.canteko.wootaxi.models;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 

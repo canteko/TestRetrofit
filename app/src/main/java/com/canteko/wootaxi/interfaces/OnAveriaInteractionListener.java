@@ -1,6 +1,6 @@
-package com.canteko.mecaround.interfaces;
+package com.canteko.wootaxi.interfaces;
 
-import com.canteko.mecaround.models.AveriaDB;
+import com.canteko.wootaxi.models.AveriaDB;
 
 public interface OnAveriaInteractionListener {
     void onAveriaClick(AveriaDB averiaDB);

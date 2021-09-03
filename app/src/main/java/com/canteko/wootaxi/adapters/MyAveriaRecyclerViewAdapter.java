@@ -1,6 +1,4 @@
-package com.canteko.mecaround.adapters;
-
-import androidx.recyclerview.widget.RecyclerView;
+package com.canteko.wootaxi.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,18 +6,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.canteko.mecaround.R;
-import com.canteko.mecaround.databinding.AveriaItemBinding;
-import com.canteko.mecaround.interfaces.OnAveriaInteractionListener;
-import com.canteko.mecaround.models.AveriaDB;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import com.bumptech.glide.Glide;
+import com.canteko.wootaxi.R;
+import com.canteko.wootaxi.databinding.AveriaItemBinding;
+import com.canteko.wootaxi.interfaces.OnAveriaInteractionListener;
+import com.canteko.wootaxi.models.AveriaDB;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmChangeListener;
 import io.realm.RealmList;
-import io.realm.RealmObjectChangeListener;
 import io.realm.RealmResults;
 
 /**

@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView6"
-        android:name="com.canteko.mecaround.fragments.AveriaElementFragment"
+        android:name="com.canteko.wootaxi.fragments.AveriaElementFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
