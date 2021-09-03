@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_photo_size_select_actual_24" />
+
+        <TextView
+            android:id="@+id/textViewAveriaTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Titulo Averia"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewPhoto"
+            app:layout_constraintTop_toTopOf="@+id/imageViewPhoto" />
+
+        <TextView
+            android:id="@+id/textViewModeloCocheAveria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Torino"
+            app:layout_constraintStart_toStartOf="@+id/textViewAveriaTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAveriaTitulo" />
+
+        <ImageView
+            android:id="@+id/imageViewPresupuesto"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPhoto"
+            app:layout_constraintStart_toStartOf="@+id/textViewModeloCocheAveria"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModeloCocheAveria"
+            app:srcCompat="@drawable/ic_baseline_featured_play_list_primary_24" />
+
+        <TextView
+            android:id="@+id/textViewPresupuestos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPresupuesto"
+            app:layout_constraintStart_toEndOf="@+id/imageViewPresupuesto"
+            app:layout_constraintTop_toTopOf="@+id/imageViewPresupuesto" />
+
+        <ImageView
+            android:id="@+id/imageViewEditarAveria"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewEliminarAveria"
+            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+        <ImageView
+            android:id="@+id/imageViewEliminarAveria"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewEditarAveria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
